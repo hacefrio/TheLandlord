@@ -346,6 +346,32 @@ sentencia.execute(sql);
         }
     }
     
+    public void mostrarcontratoscliente(JTable tabla){
+    try{
+            Class.forName(DRIVER);
+            conexion=DriverManager.getConnection(URL);
+            sentencia=conexion.createStatement();
+            
+            String sql="select * from contrato " +
+                        "join cliente " +
+                        "on cliente.rut=contrato.rut_cliente ";
+            ResultSet resultado= sentencia.executeQuery(sql);
+            int fila=0;
+            while(resultado.next()){
+                tabla.setValueAt(resultado.getInt("folio"), fila, 0);
+                tabla.setValueAt(resultado.getString("nombre"), fila, 1);
+                fila++;
+            }
+            resultado.close();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+            conexion.close();
+
+        }catch(ClassNotFoundException | SQLException e){
+                        JOptionPane.showMessageDialog(
+        null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     public void insertarsucursal(int codigo,String nombre,String direccion,int telefono){
         try{
             Class.forName(DRIVER);
