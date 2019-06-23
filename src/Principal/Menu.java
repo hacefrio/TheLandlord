@@ -23,8 +23,64 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu() {
-        initComponents();    
+    public Menu(int permisos) {
+        initComponents();
+        if(permisos==1){
+            usuarios.setVisible(true);
+            contratos.setVisible(false);
+            sucursales.setVisible(false);
+            clientes.setVisible(false);
+            autos.setVisible(false);
+        }else
+        if(permisos==2){
+            usuarios.setVisible(false);
+            contratos.setVisible(true);
+            sucursales.setVisible(false);
+            clientes.setVisible(false);
+            autos.setVisible(false);
+        }else 
+        if(permisos==3){
+            usuarios.setVisible(false);
+            contratos.setVisible(false);
+            sucursales.setVisible(true);
+            clientes.setVisible(false);
+            autos.setVisible(false);
+        }else 
+        if(permisos==4){
+            usuarios.setVisible(false);
+            contratos.setVisible(false);
+            sucursales.setVisible(false);
+            clientes.setVisible(true);
+            autos.setVisible(false);
+        }else 
+        if(permisos==5){
+            usuarios.setVisible(false);
+            contratos.setVisible(false);
+            sucursales.setVisible(false);
+            clientes.setVisible(false);
+            autos.setVisible(true);
+        }else 
+        if(permisos==6){
+            usuarios.setVisible(true);
+            contratos.setVisible(true);
+            sucursales.setVisible(true);
+            clientes.setVisible(true);
+            autos.setVisible(true);
+        }else 
+        if(permisos==7){
+            usuarios.setVisible(false);
+            contratos.setVisible(false);
+            sucursales.setVisible(true);
+            clientes.setVisible(false);
+            autos.setVisible(true);
+        }else 
+        if(permisos==8){
+            usuarios.setVisible(false);
+            contratos.setVisible(true);
+            sucursales.setVisible(false);
+            clientes.setVisible(true);
+            autos.setVisible(false);
+        }
     }
     
         @Override
@@ -45,11 +101,11 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        usuarios = new javax.swing.JButton();
+        contratos = new javax.swing.JButton();
+        sucursales = new javax.swing.JButton();
+        clientes = new javax.swing.JButton();
+        autos = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
@@ -61,50 +117,50 @@ public class Menu extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton1.setText("Usuarios");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        usuarios.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        usuarios.setText("Usuarios");
+        usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                usuariosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        getContentPane().add(usuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton2.setText("Contratos");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        contratos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        contratos.setText("Contratos");
+        contratos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                contratosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+        getContentPane().add(contratos, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton3.setText("Sucursales");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        sucursales.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        sucursales.setText("Sucursales");
+        sucursales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                sucursalesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, -1, -1));
+        getContentPane().add(sucursales, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, -1, -1));
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton4.setText("Clientes");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        clientes.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        clientes.setText("Clientes");
+        clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                clientesActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
+        getContentPane().add(clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 40, -1, -1));
 
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButton5.setText("Autos");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        autos.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        autos.setText("Autos");
+        autos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                autosActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, -1));
+        getContentPane().add(autos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, -1));
 
         jButton6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton6.setText("Cerrar");
@@ -139,35 +195,35 @@ public class Menu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void usuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuariosActionPerformed
         // TODO add your handling code here:
         MenuUsuarios mu=new MenuUsuarios();
         mu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_usuariosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void contratosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contratosActionPerformed
         // TODO add your handling code here:
         Contratos c=new Contratos();
         c.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_contratosActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void sucursalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sucursalesActionPerformed
         // TODO add your handling code here:
         Sucursales s=new Sucursales();
         s.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_sucursalesActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientesActionPerformed
         // TODO add your handling code here:
         Clientes c=new Clientes();
         c.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_clientesActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void autosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autosActionPerformed
         // TODO add your handling code here:
         Autos a=new Autos();
         a.setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_autosActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
@@ -205,20 +261,20 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton autos;
+    private javax.swing.JButton clientes;
+    private javax.swing.JButton contratos;
     private javax.swing.JLabel fondo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton sucursales;
+    private javax.swing.JButton usuarios;
     // End of variables declaration//GEN-END:variables
 }

@@ -94,7 +94,8 @@ public class Login extends javax.swing.JFrame {
     }else{
     if(datos[0].equals(usuario.getText())){
         if(contrasena.getText().equals(datos[1])){
-            Menu m=new Menu();
+            
+            Menu m=new Menu(Integer.valueOf(datos[2]));
             m.setVisible(true);
             this.dispose();
         }else {JOptionPane.showMessageDialog(
