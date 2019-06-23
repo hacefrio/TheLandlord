@@ -46,7 +46,7 @@ public class conexion {
             conexion=DriverManager.getConnection(URL);
             sentencia=conexion.createStatement();
             String sql="create table auto (" +
-"                      patente varchar(10) primary key," +
+"                      patente varchar(30) primary key," +
 "                      marca varchar(255)," +
 "                      modelo varchar(255)," +
 "                      ano int" +
@@ -98,7 +98,7 @@ sentencia.execute(sql);
         }
     }
     
-    public void usuariosDefecto(){
+    public void datosDefecto(){
     try{
     
         Class.forName(DRIVER);
@@ -119,6 +119,86 @@ sentencia.execute(sql);
         sql="insert into usuario values ('SucursalesAutos','Admin',7);";
         sentencia.execute(sql);
         sql="insert into usuario values ('ContratosClientes','Admin',8);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-07','Fiat','Fiorino',2008);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-08','Fiat','Fiorino',2010);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-09','Fiat','Fiorino',2001);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-10','Fiat','Fiorino',2018);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-11','Fiat','uno Sporting',2019);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-12','Fiat','uno Sporting',2018);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-13','Fiat','uno Sporting',2018);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-14','Fiat','uno Sporting',2018);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-15','Fiat','uno Sporting',2019);";
+        sentencia.execute(sql);
+        sql="insert into auto values ('aa-bb-16','Fiat','uno Sporting',2019);";
+        sentencia.execute(sql);
+        sql="insert into cliente values (10000001,'Alberto','1999-06-06','Masculino');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000002','Analcleto','1998-06-06','Masculino');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000003','Analcleta','1997-06-06','Femenino');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000004','Travestino','1996-06-06','Otro');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000005','Hitler','1995-06-06','Masculino');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000006','lucia hiriart','1492-06-06','otro');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000007','Augusto Pinochet','1915-06-06','Masculino');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000008','Elsa Brozon','1994-06-06','Femenino');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000009','James Gosling','1955 -06-06','Masculino');";
+        sentencia.execute(sql);
+        sql="insert into cliente values ('10000010','Guido van Rossum','1956-06-06','Masculino');";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(1,'Macul','Av.Macul 133',4645645);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(2,'Macul2','Av.Macul 1201',12354763);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(3,'Ñuñoa1','Av.Pedro de Valdivia 1323',54621354);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(4,'Ñuñoa2','Av.Pedro de Valdivia 1234',45621354);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(5,'Peñalolen1','Av.Las Torres 1223',456231564);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(6,'Peñalolen2','Av.Las Torres 42135',4562135463);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(7,'Estacion Central1','Av.Alameda 45645',12321345);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(8,'Estacion Central2','Av.Alameda 35234',13213546);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(9,'Maipu2','calle falsa 133',45645231);";
+        sentencia.execute(sql);
+        sql="insert into sucursal values(10,'Maipu2','calle verdadera 133',45623456);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(1,'10000001','2018-05-05','2019-05-05','aa-bb-07',1);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(2,'10000002','2018-05-05','2019-05-05','aa-bb-08',2);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(3,'10000003','2018-05-05','2019-05-05','aa-bb-09',3);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(4,'10000004','2018-05-05','2019-05-05','aa-bb-10',4);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(5,'10000005','2018-05-05','2019-05-05','aa-bb-11',5);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(6,'10000006','2018-05-05','2019-05-05','aa-bb-12',6);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(7,'10000007','2018-05-05','2019-05-05','aa-bb-13',7);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(8,'10000007','2018-05-05','2019-05-05','aa-bb-14',8);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(9,'10000008','2018-05-05','2019-05-05','aa-bb-15',9);";
+        sentencia.execute(sql);
+        sql="insert into contrato values(10,'10000010','2018-05-05','2019-05-05','aa-bb-16',10);";
         sentencia.execute(sql);
         sentencia.close();
         conexion.close();
@@ -224,7 +304,6 @@ sentencia.execute(sql);
     }
     
     public void eliminarusuario(String nombre){
-        String salida="";
         try{
             Class.forName(DRIVER);
             conexion=DriverManager.getConnection(URL);
@@ -386,6 +465,7 @@ sentencia.execute(sql);
         null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
     public void insertarsucursal(int codigo,String nombre,String direccion,int telefono){
         try{
             Class.forName(DRIVER);

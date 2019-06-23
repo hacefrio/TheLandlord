@@ -23,6 +23,7 @@ public class Autos extends javax.swing.JFrame {
     /** Creates new form Autos */
     public Autos() {
         initComponents();
+        db.mostrarautos(jTable1);
     }
     
     private void radioboton(){

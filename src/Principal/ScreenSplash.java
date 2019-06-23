@@ -41,7 +41,7 @@ public class ScreenSplash extends javax.swing.JFrame {
         initComponents();
         db.crearBD();
         db.crearTablas();
-        db.usuariosDefecto();
+        db.datosDefecto();
         AWTUtilities.setWindowOpaque(this, false);
         t.start();
     }
