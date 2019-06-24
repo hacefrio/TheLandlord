@@ -94,9 +94,17 @@ public class Contratos extends javax.swing.JFrame {
         ver = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        jButton4 = new javax.swing.JButton();
+        entrada2 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
+        fondo2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla2 = new javax.swing.JTable();
+        jButton6 = new javax.swing.JButton();
+        entrada3 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
+        fondo4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Contrato 100% legal");
@@ -352,7 +360,27 @@ public class Contratos extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
-        ver.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 430));
+        ver.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 350, 400));
+
+        jButton4.setText("Actualizar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        ver.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
+        ver.add(entrada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 120, 30));
+
+        jButton5.setText("Buscar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        ver.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 90, 30));
+
+        fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login.png"))); // NOI18N
+        ver.add(fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("ver todo", ver);
 
@@ -467,7 +495,27 @@ public class Contratos extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(tabla2);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 350, 410));
+
+        jButton6.setText("Actualizar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
+        jPanel1.add(entrada3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 120, 30));
+
+        jButton7.setText("Buscar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 90, 30));
+
+        fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login.png"))); // NOI18N
+        jPanel1.add(fondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jTabbedPane1.addTab("ver cliente/ contrato", jPanel1);
 
@@ -523,6 +571,50 @@ public class Contratos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i <= 99; i++) {
+            tabla.setValueAt(" ",i,0);
+            tabla.setValueAt(" ",i,1);
+            tabla.setValueAt(" ",i,2);
+            tabla.setValueAt(" ",i,3);
+            tabla.setValueAt(" ",i,4);
+            tabla.setValueAt(" ",i,5);
+        }
+        db.mostrarcontratos(tabla);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i <= 99; i++) {
+            tabla.setValueAt(" ",i,0);
+            tabla.setValueAt(" ",i,1);
+            tabla.setValueAt(" ",i,2);
+            tabla.setValueAt(" ",i,3);
+            tabla.setValueAt(" ",i,4);
+            tabla.setValueAt(" ",i,5);
+        }
+        db.buscarcontratos(tabla, entrada2.getText());
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i <= 99; i++) {
+            tabla2.setValueAt(" ",i,0);
+            tabla2.setValueAt(" ",i,1);
+        }
+        db.mostrarcontratoscliente(tabla2);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i <= 99; i++) {
+            tabla2.setValueAt(" ",i,0);
+            tabla2.setValueAt(" ",i,1);
+        }
+        db.buscarcontratoscliente(tabla2,entrada3.getText());
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -564,6 +656,8 @@ public class Contratos extends javax.swing.JFrame {
     private javax.swing.JPanel editar;
     private javax.swing.JPanel eliminar;
     private javax.swing.JTextField entrada;
+    private javax.swing.JTextField entrada2;
+    private javax.swing.JTextField entrada3;
     private javax.swing.JTextField fecha_comienzo;
     private javax.swing.JTextField fecha_termino;
     private javax.swing.JTextField folio;
@@ -571,10 +665,16 @@ public class Contratos extends javax.swing.JFrame {
     private javax.swing.JTextField folio2;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel fondo1;
+    private javax.swing.JLabel fondo2;
     private javax.swing.JLabel fondo3;
+    private javax.swing.JLabel fondo4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

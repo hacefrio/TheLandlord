@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import tryparse.TryParse;
 
 /**
  *
@@ -25,6 +26,7 @@ public class conexion {
     String NOMBREBD="empresa.sqlite";
     String URL="jdbc:sqlite:"+NOMBREBD;
     String DRIVER="org.sqlite.JDBC";
+    TryParse tp=new TryParse();
     
     public void crearBD(){
     try{
@@ -150,7 +152,7 @@ sentencia.execute(sql);
         sentencia.execute(sql);
         sql="insert into cliente values ('10000005','Hitler','1995-06-06','Masculino');";
         sentencia.execute(sql);
-        sql="insert into cliente values ('10000006','lucia hiriart','1492-06-06','otro');";
+        sql="insert into cliente values ('10000006','lucia hiriart','1492-06-06','Otro');";
         sentencia.execute(sql);
         sql="insert into cliente values ('10000007','Augusto Pinochet','1915-06-06','Masculino');";
         sentencia.execute(sql);
@@ -271,6 +273,43 @@ sentencia.execute(sql);
         }
     }
 
+    public void buscarUsuarios(JTable tabla,String entrada){
+    try{
+            Class.forName(DRIVER);
+            conexion=DriverManager.getConnection(URL);
+            sentencia=conexion.createStatement();
+            
+            String sql="select * from usuario";
+            ResultSet resultado= sentencia.executeQuery(sql);
+            int fila=0;
+            if(tp.TryInt(entrada)){
+            while(resultado.next()){
+                if(resultado.getInt("permisos")==Integer.valueOf(entrada)){
+                    tabla.setValueAt(resultado.getString("nombre_usuario"), fila, 0);
+                    tabla.setValueAt(resultado.getString("contrasena"), fila, 1);
+                    tabla.setValueAt(resultado.getInt("permisos"), fila, 2);
+                    fila++;
+                }
+            }
+            }
+            while(resultado.next()){
+                if(resultado.getString("nombre_usuario").equals(entrada) || resultado.getString("contrasena").equals(entrada)){
+                    tabla.setValueAt(resultado.getString("nombre_usuario"), fila, 0);
+                    tabla.setValueAt(resultado.getString("contrasena"), fila, 1);
+                    tabla.setValueAt(resultado.getInt("permisos"), fila, 2);
+                    fila++;
+                }
+            }
+            resultado.close();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+            conexion.close();
+        }catch(ClassNotFoundException | SQLException e){
+                        JOptionPane.showMessageDialog(
+        null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     public void editarusuario(String entrada, String nombre, int eleccion){
         String sql="";
         try{
@@ -438,6 +477,57 @@ sentencia.execute(sql);
         null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+   
+    public void buscarcontratos(JTable tabla,String entrada){
+    try{
+            Class.forName(DRIVER);
+            conexion=DriverManager.getConnection(URL);
+            sentencia=conexion.createStatement();
+            
+            String sql="select * from contrato " +
+                        "join cliente " +
+                        "on cliente.rut=contrato.rut_cliente " +
+                        "join sucursal " +
+                        "on sucursal.cod_sucursal=contrato.cod_sucursal";
+            ResultSet resultado= sentencia.executeQuery(sql);
+            int fila=0;
+            if(tp.TryInt(entrada)){
+                while(resultado.next()){
+                    if(resultado.getInt("folio")==Integer.valueOf(entrada)){
+                        tabla.setValueAt(resultado.getInt("folio"), fila, 0);
+                        tabla.setValueAt(resultado.getString("nombre"), fila, 1);
+                        tabla.setValueAt(resultado.getString("fecha_comienzo"), fila, 2);
+                        tabla.setValueAt(resultado.getString("fecha_termino"), fila, 3);
+                        tabla.setValueAt(resultado.getString("patente_auto"), fila, 4);
+                        tabla.setValueAt(resultado.getString("nombre_sucursal"), fila, 5);
+                        fila++;
+                    }
+                }
+            }
+            
+            while(resultado.next()){
+                if(resultado.getString("nombre").equals(entrada)||resultado.getString("fecha_comienzo").equals(entrada)
+                || resultado.getString("fecha_termino").equals(entrada)||resultado.getString("patente_auto").equals(entrada)
+                ||resultado.getString("nombre_sucursal").equals(entrada)){
+                    tabla.setValueAt(resultado.getInt("folio"), fila, 0);
+                    tabla.setValueAt(resultado.getString("nombre"), fila, 1);
+                    tabla.setValueAt(resultado.getString("fecha_comienzo"), fila, 2);
+                    tabla.setValueAt(resultado.getString("fecha_termino"), fila, 3);
+                    tabla.setValueAt(resultado.getString("patente_auto"), fila, 4);
+                    tabla.setValueAt(resultado.getString("nombre_sucursal"), fila, 5);
+                    fila++;
+                }
+            }
+            resultado.close();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+            conexion.close();
+
+        }catch(ClassNotFoundException | SQLException e){
+                        JOptionPane.showMessageDialog(
+        null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     
     public void mostrarcontratoscliente(JTable tabla){
     try{
@@ -454,6 +544,44 @@ sentencia.execute(sql);
                 tabla.setValueAt(resultado.getInt("folio"), fila, 0);
                 tabla.setValueAt(resultado.getString("nombre"), fila, 1);
                 fila++;
+            }
+            resultado.close();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+            conexion.close();
+
+        }catch(ClassNotFoundException | SQLException e){
+                        JOptionPane.showMessageDialog(
+        null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void buscarcontratoscliente(JTable tabla,String entrada){
+    try{
+            Class.forName(DRIVER);
+            conexion=DriverManager.getConnection(URL);
+            sentencia=conexion.createStatement();
+            
+            String sql="select * from contrato " +
+                        "join cliente " +
+                        "on cliente.rut=contrato.rut_cliente ";
+            ResultSet resultado= sentencia.executeQuery(sql);
+            int fila=0;
+            if(tp.TryInt(entrada)){
+                while(resultado.next()){
+                    if(resultado.getInt("folio")==Integer.parseInt(entrada)){
+                        tabla.setValueAt(resultado.getInt("folio"), fila, 0);
+                        tabla.setValueAt(resultado.getString("nombre"), fila, 1);
+                        fila++;
+                    }
+                }
+            }
+            while(resultado.next()){
+                if(resultado.getString("nombre").equals(entrada)){
+                    tabla.setValueAt(resultado.getInt("folio"), fila, 0);
+                    tabla.setValueAt(resultado.getString("nombre"), fila, 1);
+                    fila++;
+                }
             }
             resultado.close();
             sentencia.executeUpdate(sql);
@@ -566,6 +694,47 @@ sentencia.execute(sql);
         }
     }
 
+    public void buscarsucursal(JTable tabla,String entrada){
+    try{
+            Class.forName(DRIVER);
+            conexion=DriverManager.getConnection(URL);
+            sentencia=conexion.createStatement();
+            
+            String sql="select * from sucursal ";
+            ResultSet resultado= sentencia.executeQuery(sql);
+            int fila=0;
+            if(tp.TryInt(entrada)){
+                while(resultado.next()){
+                    if(resultado.getInt("cod_sucursal")==Integer.valueOf(entrada) ||
+                    resultado.getInt("telefono")==Integer.valueOf(entrada)){
+                        tabla.setValueAt(resultado.getInt("cod_sucursal"), fila, 0);
+                        tabla.setValueAt(resultado.getString("nombre_sucursal"), fila, 1);
+                        tabla.setValueAt(resultado.getString("direccion"), fila, 2);
+                        tabla.setValueAt(resultado.getInt("telefono"), fila, 3);
+                        fila++;
+                    }
+                }
+            }
+            while(resultado.next()){
+                if(resultado.getString("nombre_sucursal").equals(entrada) || resultado.getString("direccion").equals(entrada)){
+                    tabla.setValueAt(resultado.getInt("cod_sucursal"), fila, 0);
+                    tabla.setValueAt(resultado.getString("nombre_sucursal"), fila, 1);
+                    tabla.setValueAt(resultado.getString("direccion"), fila, 2);
+                    tabla.setValueAt(resultado.getInt("telefono"), fila, 3);
+                    fila++;
+                }
+            }
+            resultado.close();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+            conexion.close();
+
+        }catch(ClassNotFoundException | SQLException e){
+                        JOptionPane.showMessageDialog(
+        null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
     public void insertarcliente(String rut ,String nombre,String fecha_nacimiento, String sexo){
         String salida="";
         try{
@@ -655,6 +824,36 @@ sentencia.execute(sql);
                 tabla.setValueAt(resultado.getString("fecha_nacimiento"), fila, 2);
                 tabla.setValueAt(resultado.getString("sexo"), fila, 3);
                 fila++;
+            }
+            resultado.close();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+            conexion.close();
+
+        }catch(ClassNotFoundException | SQLException e){
+                        JOptionPane.showMessageDialog(
+        null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void buscarclientes(JTable tabla,String entrada){
+    try{
+            Class.forName(DRIVER);
+            conexion=DriverManager.getConnection(URL);
+            sentencia=conexion.createStatement();
+            
+            String sql="select * from cliente ";
+            ResultSet resultado= sentencia.executeQuery(sql);
+            int fila=0;
+            while(resultado.next()){
+                if(resultado.getString("rut").equals(entrada) || resultado.getString("nombre").equals(entrada)
+                   || resultado.getString("fecha_nacimiento").equals(entrada) || resultado.getString("sexo").equals(entrada)){
+                    tabla.setValueAt(resultado.getString("rut"), fila, 0);
+                    tabla.setValueAt(resultado.getString("nombre"), fila, 1);
+                    tabla.setValueAt(resultado.getString("fecha_nacimiento"), fila, 2);
+                    tabla.setValueAt(resultado.getString("sexo"), fila, 3);
+                    fila++;
+                }
             }
             resultado.close();
             sentencia.executeUpdate(sql);
@@ -757,6 +956,48 @@ sentencia.execute(sql);
                 tabla.setValueAt(resultado.getInt("ano"), fila, 3);
                 fila++;
             }
+            resultado.close();
+            sentencia.executeUpdate(sql);
+            sentencia.close();
+            conexion.close();
+
+        }catch(ClassNotFoundException | SQLException e){
+            JOptionPane.showMessageDialog(
+        null, "error: "+e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public void buscarautos(JTable tabla,String entrada){
+    try{
+            Class.forName(DRIVER);
+            conexion=DriverManager.getConnection(URL);
+            sentencia=conexion.createStatement();
+            
+            String sql="select * from auto ";
+            ResultSet resultado= sentencia.executeQuery(sql);
+            int fila=0;
+            if(tp.TryInt(entrada)){
+                while(resultado.next()){
+                    if( resultado.getInt("ano")==Integer.valueOf(entrada)){
+                        tabla.setValueAt(resultado.getString("patente"), fila, 0);
+                        tabla.setValueAt(resultado.getString("marca"), fila, 1);
+                        tabla.setValueAt(resultado.getString("modelo"), fila, 2);
+                        tabla.setValueAt(resultado.getInt("ano"), fila, 3);
+                        fila++;
+                    }
+                }
+            }
+            while(resultado.next()){
+                if( resultado.getString("patente").equals(entrada) || resultado.getString("marca").equals(entrada)
+                        || resultado.getString("modelo").equals(entrada)){
+                    tabla.setValueAt(resultado.getString("patente"), fila, 0);
+                    tabla.setValueAt(resultado.getString("marca"), fila, 1);
+                    tabla.setValueAt(resultado.getString("modelo"), fila, 2);
+                    tabla.setValueAt(resultado.getInt("ano"), fila, 3);
+                    fila++;
+                }
+            }
+            
             resultado.close();
             sentencia.executeUpdate(sql);
             sentencia.close();

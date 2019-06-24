@@ -96,6 +96,9 @@ public class Sucursales extends javax.swing.JFrame {
         ver = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        entrada2 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
         fondo3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -372,7 +375,24 @@ public class Sucursales extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabla);
 
-        ver.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 340, 440));
+        ver.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 350, 410));
+
+        jButton5.setText("Buscar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        ver.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 90, 30));
+        ver.add(entrada2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 120, 30));
+
+        jButton4.setText("Actualizar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        ver.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 30));
 
         fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login.png"))); // NOI18N
         ver.add(fondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -465,6 +485,28 @@ public class Sucursales extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_codigo2ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i <= 99; i++) {
+            tabla.setValueAt(" ",i,0);
+            tabla.setValueAt(" ",i,1);
+            tabla.setValueAt(" ",i,2);
+            tabla.setValueAt(" ",i,3);
+        }
+        db.buscarsucursal(tabla, entrada2.getText());
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i <= 99; i++) {
+            tabla.setValueAt(" ",i,0);
+            tabla.setValueAt(" ",i,1);
+            tabla.setValueAt(" ",i,2);
+            tabla.setValueAt(" ",i,3);
+        }
+        db.mostrarsucursal(tabla);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -513,6 +555,7 @@ public class Sucursales extends javax.swing.JFrame {
     private javax.swing.JTextField direccion;
     private javax.swing.JPanel editar;
     private javax.swing.JTextField entrada;
+    private javax.swing.JTextField entrada2;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel fondo1;
     private javax.swing.JLabel fondo2;
@@ -520,6 +563,8 @@ public class Sucursales extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

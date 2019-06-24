@@ -55,6 +55,12 @@ public class Login extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 170, 30));
+
+        usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usuarioActionPerformed(evt);
+            }
+        });
         getContentPane().add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 170, 30));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -108,6 +114,10 @@ public class Login extends javax.swing.JFrame {
     }
     }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usuarioActionPerformed
 
     /**
      * @param args the command line arguments
