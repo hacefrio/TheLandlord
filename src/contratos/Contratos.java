@@ -479,7 +479,7 @@ public class Contratos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(tp.TryInt(folio.getText())==true || tp.TryInt(cod_sucursal.getText())==true){
+        if(tp.TryInt(folio.getText())==true && tp.TryInt(cod_sucursal.getText())==true){
                 db.insertarcontrato(Integer.valueOf(folio.getText()), rut.getText(), fecha_comienzo.getText(), fecha_termino.getText(), patente_auto.getText(), Integer.valueOf(cod_sucursal.getText()));
         }else {
             JOptionPane.showMessageDialog (null, "los siguientes campos tienen que ser tipo numerico:\n"
