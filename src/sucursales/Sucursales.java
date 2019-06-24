@@ -405,7 +405,7 @@ public class Sucursales extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String nombre1="",telefono1="",direccion1="";
-        if(tp.TryInt(codigo.getText())==true|| tp.TryInt(telefono.getText())==true){
+        if(tp.TryInt(codigo.getText())==true && tp.TryInt(telefono.getText())==true){
             int codigo1=Integer.valueOf(codigo.getText());
             if (checkNombre.isSelected()==true){
             nombre1=nombre.getText();

@@ -49,7 +49,7 @@ public class conexion {
 "                      patente varchar(30) primary key," +
 "                      marca varchar(255)," +
 "                      modelo varchar(255)," +
-"                      ano int" +
+"                      ano int " +
 ");";
 sentencia.execute(sql);
 sql="create table sucursal (" +
@@ -490,7 +490,7 @@ sentencia.execute(sql);
             sentencia=conexion.createStatement();
             String sql="DELETE " +
                 "FROM sucursal " +
-                "WHERE codigo="+codigo+";";
+                "WHERE cod_sucursal="+codigo+";";
             sentencia.execute(sql);
             sentencia.close();
             conexion.close();
@@ -510,23 +510,23 @@ sentencia.execute(sql);
             sentencia=conexion.createStatement();
             if (eleccion==1){
              sql="UPDATE sucursal "+
-                "SET codigo = "+entrada+" " +
-                "WHERE codigo="+codigo+";";
+                "SET cod_sucursal = "+entrada+" " +
+                "WHERE cod_sucursal="+codigo+";";
             }else
             if (eleccion==2){
              sql="UPDATE sucursal "+
-                "SET nombre = '"+entrada+"' " +
-                "WHERE codigo="+codigo+";";
+                "SET nombre_sucursal = '"+entrada+"' " +
+                "WHERE cod_sucursal="+codigo+";";
             }
             if(eleccion==3){
              sql="UPDATE sucursal "+
                 "SET direccion = '"+entrada+"' "+
-                "WHERE codigo="+codigo+";";
+                "WHERE cod_sucursal="+codigo+";";
             }
             if(eleccion==4){
              sql="UPDATE sucursal "+
-                "SET numero = "+entrada+" " +
-                "WHERE codigo="+codigo+";";
+                "SET telefono = "+entrada+" " +
+                "WHERE cod_sucursal="+codigo+";";
             }
             JOptionPane.showMessageDialog (null, "Consulta realizada con exito", "Consulta realizada con exito", JOptionPane.INFORMATION_MESSAGE);
             sentencia.execute(sql);

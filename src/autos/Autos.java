@@ -24,6 +24,7 @@ public class Autos extends javax.swing.JFrame {
     public Autos() {
         initComponents();
         db.mostrarautos(jTable1);
+        radioboton();
     }
     
     private void radioboton(){
