@@ -283,14 +283,14 @@ sentencia.execute(sql);
             ResultSet resultado= sentencia.executeQuery(sql);
             int fila=0;
             if(tp.TryInt(entrada)){
-            while(resultado.next()){
-                if(resultado.getInt("permisos")==Integer.valueOf(entrada)){
-                    tabla.setValueAt(resultado.getString("nombre_usuario"), fila, 0);
-                    tabla.setValueAt(resultado.getString("contrasena"), fila, 1);
-                    tabla.setValueAt(resultado.getInt("permisos"), fila, 2);
-                    fila++;
+                while(resultado.next()){
+                    if(resultado.getInt("permisos")==Integer.valueOf(entrada)){
+                        tabla.setValueAt(resultado.getString("nombre_usuario"), fila, 0);
+                        tabla.setValueAt(resultado.getString("contrasena"), fila, 1);
+                        tabla.setValueAt(resultado.getInt("permisos"), fila, 2);
+                        fila++;
+                    }
                 }
-            }
             }
             while(resultado.next()){
                 if(resultado.getString("nombre_usuario").equals(entrada) || resultado.getString("contrasena").equals(entrada)){
