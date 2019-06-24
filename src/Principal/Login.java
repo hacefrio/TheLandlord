@@ -1,8 +1,32 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+ * software para la gestion de automotora "The Landlord"
+ *
+ *
+ *
+ * Desarrolladores:
+ * Sebastian Vargas <vargas.sebastianm@gmail.com>
+ * Juan Peralta <Jpabloperaltacasanova@gmail.com>
+
+ *
+ * Este programa es software libre; Puedes redistribuirlo y / o modificarlo.
+ * bajo los términos de la Licencia Pública General de GNU tal como fue publicada por
+ * la Fundación de Software Libre; ya sea la versión 2 de la Licencia, o
+ * (a su elección) cualquier versión posterior.
+ *
+ *
+ * CONDICIONES DE LA LICENCIA
+ *
+ * Licencia de Dominio Público
+ * 
+ * La distribución gratuita y el uso de este software y distribucion es libre.
+ *
+ * DESCARGO DE RESPONSABILIDAD
+ *
+ * Este software se proporciona "tal cual" sin garantías explícitas ni implícitas
+ * con respecto a sus propiedades, incluida, entre otras, la corrección
+ * y / o aptitud para el propósito.
+ * ------------------------------------------------- ----------------------------
+ */
 package Principal;
 
 import conexion.conexion;
@@ -10,10 +34,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Sebastian
- */
+
 public class Login extends javax.swing.JFrame {
     conexion db=new conexion();
     /**
