@@ -129,7 +129,7 @@ public class Sucursales extends javax.swing.JFrame {
         fondo3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Sucursales sin baños");
+        setTitle("Sucursales");
         setIconImage(getIconImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

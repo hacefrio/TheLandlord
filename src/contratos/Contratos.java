@@ -134,7 +134,7 @@ public class Contratos extends javax.swing.JFrame {
         fondo4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Contrato 100% legal");
+        setTitle("Contrato ");
         setIconImage(getIconImage());
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
