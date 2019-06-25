@@ -134,7 +134,6 @@ public class Login extends javax.swing.JFrame {
     }else {
         JOptionPane.showMessageDialog(
         null, "Usuario incorrecto", "error", JOptionPane.ERROR_MESSAGE);
-;
     }
     }
     }//GEN-LAST:event_jButton1ActionPerformed

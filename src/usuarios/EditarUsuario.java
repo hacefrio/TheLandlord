@@ -32,7 +32,6 @@
 
 package usuarios;
 
-import com.sun.awt.AWTUtilities;
 import conexion.conexion;
 import java.awt.Image;
 import java.awt.Toolkit;
