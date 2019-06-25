@@ -6,27 +6,30 @@
  * Desarrolladores:
  * Sebastian Vargas <vargas.sebastianm@gmail.com>
  * Juan Peralta <Jpabloperaltacasanova@gmail.com>
+ *
+    MIT License
 
- *
- * Este programa es software libre; Puedes redistribuirlo y / o modificarlo.
- * bajo los términos de la Licencia Pública General de GNU tal como fue publicada por
- * la Fundación de Software Libre; ya sea la versión 2 de la Licencia, o
- * (a su elección) cualquier versión posterior.
- *
- *
- * CONDICIONES DE LA LICENCIA
- *
- * Licencia de Dominio Público
- * 
- * La distribución gratuita y el uso de este software y distribucion es libre.
- *
- * DESCARGO DE RESPONSABILIDAD
- *
- * Este software se proporciona "tal cual" sin garantías explícitas ni implícitas
- * con respecto a sus propiedades, incluida, entre otras, la corrección
- * y / o aptitud para el propósito.
- * ------------------------------------------------- ----------------------------
+    Copyright (c) 2019 jpaiton2334
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
  */
+
 package Principal;
 
 import conexion.conexion;
