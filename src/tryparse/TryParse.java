@@ -46,5 +46,12 @@ public boolean TryInt(String cadena){
 		return false;
 	}
 }
-
+public boolean TryDouble(String cadena){
+	try {
+		Double.parseDouble(cadena);
+		return true;
+	} catch (NumberFormatException nfe){
+		return false;
+	}
+}
 }

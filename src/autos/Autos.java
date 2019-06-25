@@ -121,7 +121,6 @@ public class Autos extends javax.swing.JFrame {
         setTitle("Autos");
         setIconImage(getIconImage());
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -185,7 +184,7 @@ public class Autos extends javax.swing.JFrame {
         jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 190, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
 
         tabla.addTab("crear", jPanel1);
 
@@ -411,7 +410,16 @@ public class Autos extends javax.swing.JFrame {
 
         tabla.addTab("ver", jPanel4);
 
-        getContentPane().add(tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 460));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(tabla, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(tabla, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
         setLocationRelativeTo(null);

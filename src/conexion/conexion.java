@@ -32,6 +32,7 @@
 
 package conexion;
 
+import java.io.File;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -60,7 +61,6 @@ public class conexion {
     
         Class.forName(DRIVER);
         conexion=DriverManager.getConnection(URL);
-        
     }catch(ClassNotFoundException | SQLException e){
         System.out.println("ERROR:"+e.getMessage());
     }

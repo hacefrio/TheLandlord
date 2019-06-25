@@ -46,14 +46,14 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
     }
-        @Override
-            public Image getIconImage() {
-                Image retValue = Toolkit.getDefaultToolkit().
-                        getImage(ClassLoader.getSystemResource("Imagenes/icono.png"));
+    @Override
+        public Image getIconImage() {
+            Image retValue = Toolkit.getDefaultToolkit().
+                    getImage(ClassLoader.getSystemResource("Imagenes/icono.png"));
 
 
-                return retValue;
-        }
+            return retValue;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -110,7 +110,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 190, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Login.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);

@@ -84,7 +84,7 @@ public class CrearUsuario extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(240, 240, 240));
         jLabel1.setText("Permisos:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 70, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 70, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
@@ -95,9 +95,9 @@ public class CrearUsuario extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("Contraseña:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, 20));
-        getContentPane().add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 130, -1));
-        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, -1));
-        getContentPane().add(permisos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 130, -1));
+        getContentPane().add(contrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 130, 30));
+        getContentPane().add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 130, 30));
+        getContentPane().add(permisos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 130, 30));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("Insertar");
