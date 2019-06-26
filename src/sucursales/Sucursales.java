@@ -452,13 +452,20 @@ public class Sucursales extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String nombre1="",telefono1="",direccion1="";
-        if(tp.TryInt(codigo.getText())==true && tp.TryInt(telefono.getText())==true){
+        if(tp.TryInt(codigo.getText())==true){
             int codigo1=Integer.valueOf(codigo.getText());
             if (checkNombre.isSelected()==true){
             nombre1=nombre.getText();
             }
             if(checkTelefono.isSelected()==true){
-            telefono1=telefono.getText();
+                if (tp.TryInt(telefono.getText())==true){
+                    telefono1=telefono.getText();
+                }else {
+                    JOptionPane.showMessageDialog (null, "Uno se los siguientes datos tiene que ser tipo numerico:"
+                    + "\n*telefono", "Modifique campo", JOptionPane.WARNING_MESSAGE);
+                }
+            }else {
+            telefono1="0";
             }
             if (checkDireccion.isSelected()==true){
             direccion1=direccion.getText();
@@ -466,7 +473,7 @@ public class Sucursales extends javax.swing.JFrame {
             db.insertarsucursal(codigo1, nombre1, direccion1, Integer.valueOf(telefono1));
         }else{
         JOptionPane.showMessageDialog (null, "Uno se los siguientes datos tiene que ser tipo numerico:"
-                + "\n*codigo\n*telefono", "Modifique campo", JOptionPane.WARNING_MESSAGE);
+                + "\n*codigo", "Modifique campo", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

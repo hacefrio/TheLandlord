@@ -22,9 +22,9 @@ DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\Sebastian\Documents\NetBeansProjects\thelandlord1\setup
+OutputDir=C:\Users\RLCXX\Documents\NetBeansProjects\thelandlord\setup
 OutputBaseFilename=The Landlord installer
-SetupIconFile=C:\Users\Sebastian\Documents\NetBeansProjects\thelandlord1\exe\logo.ico
+SetupIconFile=C:\Users\RLCXX\Documents\NetBeansProjects\thelandlord\exe\logo.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -37,8 +37,8 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Sebastian\Documents\NetBeansProjects\thelandlord1\exe\TheLandlord.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Sebastian\Documents\NetBeansProjects\thelandlord1\exe\lib\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\RLCXX\Documents\NetBeansProjects\thelandlord\exe\TheLandlord.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\RLCXX\Documents\NetBeansProjects\thelandlord\exe\lib\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

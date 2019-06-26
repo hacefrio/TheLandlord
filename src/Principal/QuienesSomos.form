@@ -83,7 +83,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="&#xa;&#xa;- Juan Panlo Peralta Casanova&#xa;- Sebastian Enrique Vargas Mu&#xf1;oz"/>
+                <Property name="text" type="java.lang.String" value="&#xa;&#xa;- Juan Pablo Peralta Casanova&#xa;- Sebastian Enrique Vargas Mu&#xf1;oz"/>
               </Properties>
             </Component>
           </SubComponents>

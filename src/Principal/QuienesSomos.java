@@ -77,7 +77,7 @@ public class QuienesSomos extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("\n\n- Juan Panlo Peralta Casanova\n- Sebastian Enrique Vargas Muñoz");
+        jTextArea1.setText("\n\n- Juan Pablo Peralta Casanova\n- Sebastian Enrique Vargas Muñoz");
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/java.png"))); // NOI18N
